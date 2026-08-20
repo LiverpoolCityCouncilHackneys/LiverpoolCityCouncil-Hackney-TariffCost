@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex, nofollow">
     <!-- End Search Engine Block -->
     <!-- Turf.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    <script src="https://jsdelivr.net"></script>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 15px; background-color: #FBF9FE; color: #1c1e21; margin: 0; }
         .container { max-width: 500px; margin: 0 auto; background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-top: 6px solid #5B2E91; }
@@ -160,9 +160,9 @@
     // --- LIVE TARIFF CLOCK SYSTEM ---
     function updateTariffs() {
         const now = new Date();
-        const day = now.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
+        const day = now.getDay();
         const hours = now.getHours();
         const minutes = now.getMinutes();
-        const timeVal = hours * 1000 + minutes; // Format time as HHMM for easy matching
+        const timeVal = hours * 1000 + minutes;
 
-        // Format nice display time for the user
+        const timeString = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
